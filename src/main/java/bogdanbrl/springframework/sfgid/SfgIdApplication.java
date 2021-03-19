@@ -1,9 +1,6 @@
 package bogdanbrl.springframework.sfgid;
 
-import bogdanbrl.springframework.sfgid.controllers.ConstructorInjectedController;
-import bogdanbrl.springframework.sfgid.controllers.MyController;
-import bogdanbrl.springframework.sfgid.controllers.PropertyInjectedController;
-import bogdanbrl.springframework.sfgid.controllers.SetterInjectedController;
+import bogdanbrl.springframework.sfgid.controllers.*;
 import bogdanbrl.springframework.sfgid.services.PrimaryGreetingService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +12,10 @@ public class SfgIdApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(SfgIdApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
+
 
 		System.out.println("----------- Property DI:");
 
