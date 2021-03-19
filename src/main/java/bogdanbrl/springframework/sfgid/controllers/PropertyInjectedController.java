@@ -1,14 +1,19 @@
 package bogdanbrl.springframework.sfgid.controllers;
 
 import bogdanbrl.springframework.sfgid.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * @author Bogdan Brl
  * @created 19/03/2021 - 11:09 AM
  * @project sfg-di
  */
+
+@Controller
 public class PropertyInjectedController {
 
+    @Autowired
     public GreetingService greetingService;
 
     public String getGreeting(){
