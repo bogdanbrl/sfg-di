@@ -1,9 +1,10 @@
 package bogdanbrl.springframework.sfgid;
 
-import bogdanbrl.springframework.sfgid.controllers.ConstructorInjectorController;
+import bogdanbrl.springframework.sfgid.controllers.ConstructorInjectedController;
 import bogdanbrl.springframework.sfgid.controllers.MyController;
 import bogdanbrl.springframework.sfgid.controllers.PropertyInjectedController;
 import bogdanbrl.springframework.sfgid.controllers.SetterInjectedController;
+import bogdanbrl.springframework.sfgid.services.PrimaryGreetingService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,12 +15,6 @@ public class SfgIdApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(SfgIdApplication.class, args);
-
-		MyController myController = (MyController) ctx.getBean("myController");
-
-		String greeting = myController.sayHello();
-
-		System.out.println(greeting);
 
 		System.out.println("----------- Property DI:");
 
@@ -35,9 +30,15 @@ public class SfgIdApplication {
 
 		System.out.println("----------- Constructor DI:");
 
-		ConstructorInjectorController constructorInjectorController = (ConstructorInjectorController) ctx.getBean("constructorInjectorController");
+		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 
-		System.out.println(constructorInjectorController.getGreeting());
+		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("-----------  DI using Primary annotation (similar to a default value - when no qualifier is provided):");
+
+		MyController myController = (MyController) ctx.getBean("myController");
+
+		System.out.println(myController.sayHello());
 	}
 
 }

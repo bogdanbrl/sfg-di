@@ -1,11 +1,8 @@
 package bogdanbrl.springframework.sfgid.controllers;
 
-import bogdanbrl.springframework.sfgid.services.GreetingServiceImpl;
-import org.junit.jupiter.api.BeforeAll;
+import bogdanbrl.springframework.sfgid.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Bogdan Brl
@@ -20,7 +17,7 @@ class PropertyInjectedControllerTest {
     void setUp(){
         controller = new PropertyInjectedController();
 
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorGreetingService();
     }
 
     @Test

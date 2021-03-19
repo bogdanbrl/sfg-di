@@ -2,6 +2,7 @@ package bogdanbrl.springframework.sfgid.controllers;
 
 import bogdanbrl.springframework.sfgid.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Controller;
  * @project sfg-di
  */
 @Controller
-public class ConstructorInjectorController {
+public class ConstructorInjectedController {
 
     private final GreetingService greetingService;
 
@@ -18,7 +19,7 @@ public class ConstructorInjectorController {
     * because spring will add it automatically
     * */
 
-    public ConstructorInjectorController(GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
