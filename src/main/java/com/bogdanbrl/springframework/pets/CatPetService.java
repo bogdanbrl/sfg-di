@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
  * @project sfg-di
  */
 
-@Profile("cat")
-@Service
+//@Profile("cat")
+//@Service
 public class CatPetService implements PetService {
     @Override
     public String getPetType() {
