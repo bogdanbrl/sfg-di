@@ -1,0 +1,4 @@
+#db:
+#  username:YmlDevDbUser
+#  password=YmlDevDbPassword
+#  jdbcurl=YmlDevDbUrl
