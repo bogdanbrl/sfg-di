@@ -1,5 +1,7 @@
 package bogdanbrl.springframework.sfgid;
 
+import bogdanbrl.springframework.sfgid.config.SfgPropertiesBindingConfiguration;
+import bogdanbrl.springframework.sfgid.config.SfgPropertiesConstructorConfig;
 import bogdanbrl.springframework.sfgid.controllers.*;
 import bogdanbrl.springframework.sfgid.datasource.FakeDataSource;
 import bogdanbrl.springframework.sfgid.services.beanScopeExample.PrototypeBean;
@@ -69,6 +71,19 @@ public class SfgIdApplication {
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getJdbcurl());
+
+
+		System.out.println("\n\n\n\n\n\nConfig app with properties");
+		SfgPropertiesBindingConfiguration sfgPropertiesBindingConfiguration = ctx.getBean(SfgPropertiesBindingConfiguration.class);
+		System.out.println(sfgPropertiesBindingConfiguration.getUsername());
+		System.out.println(sfgPropertiesBindingConfiguration.getPassword());
+		System.out.println(sfgPropertiesBindingConfiguration.getJdbcurl());
+
+		System.out.println("\n\n\n\n\n\nConfig app with properties in constructor");
+		SfgPropertiesConstructorConfig sfgPropertiesConstructorConfig = ctx.getBean(SfgPropertiesConstructorConfig.class);
+		System.out.println(sfgPropertiesConstructorConfig.getUsername());
+		System.out.println(sfgPropertiesConstructorConfig.getPassword());
+		System.out.println(sfgPropertiesConstructorConfig.getJdbcurl());
 	}
 
 }

@@ -8,8 +8,10 @@ import bogdanbrl.springframework.sfgid.services.*;
 import com.bogdanbrl.springframework.pets.PetService;
 import com.bogdanbrl.springframework.pets.PetServiceFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
+@EnableConfigurationProperties(SfgPropertiesConstructorConfig.class)
 @PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
