@@ -29,7 +29,7 @@ public class GreetingServiceConfig {
         return petServiceFactory.getPetService("cat");
     }
 
-    // @Bean
+    // @Bean -- set in xml
     ConstructorGreetingService constructorGreetingService(){
         return new ConstructorGreetingService();
     }

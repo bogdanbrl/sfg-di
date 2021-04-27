@@ -1,6 +1,8 @@
 package bogdanbrl.springframework.sfgid;
 
 import bogdanbrl.springframework.sfgid.controllers.*;
+import bogdanbrl.springframework.sfgid.services.beanScopeExample.PrototypeBean;
+import bogdanbrl.springframework.sfgid.services.beanScopeExample.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -45,6 +47,23 @@ public class SfgIdApplication {
 		MyController myController = (MyController) ctx.getBean("myController");
 
 		System.out.println(myController.sayHello());
+
+		System.out.println("\n\n\n\nDemonstrating bean scopes");
+		SingletonBean singletonBean1 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean1.getMyScope());
+		SingletonBean singletonBean2 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean2.getMyScope());
+		SingletonBean singletonBean3 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean3.getMyScope());
+
+		PrototypeBean prototypeBean1 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean1.getMyScope());
+		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean1.getMyScope());
+		PrototypeBean prototypeBean3 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean1.getMyScope());
+
+
 	}
 
 }
