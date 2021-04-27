@@ -1,6 +1,6 @@
 package bogdanbrl.springframework.sfgid.controllers;
 
-import bogdanbrl.springframework.sfgid.services.PetService;
+import com.bogdanbrl.springframework.pets.PetService;
 import org.springframework.stereotype.Controller;
 
 /**

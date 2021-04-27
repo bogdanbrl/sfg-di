@@ -1,4 +1,4 @@
-package bogdanbrl.springframework.sfgid.services;
+package com.bogdanbrl.springframework.pets;
 
 /**
  * @author Bogdan Brl

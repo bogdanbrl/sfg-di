@@ -1,11 +1,12 @@
 package bogdanbrl.springframework.sfgid;
 
 import bogdanbrl.springframework.sfgid.controllers.*;
-import bogdanbrl.springframework.sfgid.services.PrimaryGreetingService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan(basePackages = {"bogdanbrl.springframework.sfgid", "com.bogdanbrl.springframework.pets"})
 @SpringBootApplication
 public class SfgIdApplication {
 

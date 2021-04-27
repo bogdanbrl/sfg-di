@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
  * @project sfg-di
  */
 
-@Service
 public class ConstructorGreetingService implements GreetingService {
 
     @Override
