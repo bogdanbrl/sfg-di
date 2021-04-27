@@ -1,6 +1,7 @@
 package bogdanbrl.springframework.sfgid;
 
 import bogdanbrl.springframework.sfgid.controllers.*;
+import bogdanbrl.springframework.sfgid.datasource.FakeDataSource;
 import bogdanbrl.springframework.sfgid.services.beanScopeExample.PrototypeBean;
 import bogdanbrl.springframework.sfgid.services.beanScopeExample.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -63,7 +64,11 @@ public class SfgIdApplication {
 		PrototypeBean prototypeBean3 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean1.getMyScope());
 
-
+		System.out.println("\n\n\n\n\nUse properties files");
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUsername());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getJdbcurl());
 	}
 
 }
